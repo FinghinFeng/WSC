@@ -1,0 +1,153 @@
+2016-11-07 16:41:40 pid:4421 Workerman[start.php] start in DEBUG mode
+2016-11-07 16:43:12 pid:4421 Workerman[start.php] Stopping ...
+2016-11-07 16:43:12 pid:4421 Workerman[start.php] has been stopped
+2016-11-08 17:03:07 pid:11788 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:07:05 pid:11788 Workerman[start.php] Stopping ...
+2016-11-08 17:07:05 pid:11788 Workerman[start.php] has been stopped
+2016-11-08 17:11:33 pid:12242 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:16:38 pid:12242 Workerman[start.php] Stopping ...
+2016-11-08 17:16:38 pid:12242 Workerman[start.php] has been stopped
+2016-11-08 17:16:58 pid:12485 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:19:41 pid:12485 Workerman[start.php] Stopping ...
+2016-11-08 17:19:41 pid:12485 Workerman[start.php] has been stopped
+2016-11-08 17:20:02 pid:12640 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:20:58 pid:12640 Workerman[start.php] Stopping ...
+2016-11-08 17:20:58 pid:12640 Workerman[start.php] has been stopped
+2016-11-08 17:30:47 pid:12992 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:31:01 pid:12996 Error: Using $this when not in object context in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fe000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108fe000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #53)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 17:31:01 pid:12996 WORKER EXIT UNEXPECTED 
+2016-11-08 17:31:01 pid:12992 worker[ChatBusinessWorker:12996] exit with status 64000
+2016-11-08 17:31:52 pid:12992 Workerman[start.php] Stopping ...
+2016-11-08 17:31:52 pid:12992 Workerman[start.php] has been stopped
+2016-11-08 17:35:11 pid:13137 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:35:24 pid:13140 Error: Undefined class constant 'CENTRE_ID' in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fd000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108fd000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #50)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 17:35:24 pid:13140 WORKER EXIT UNEXPECTED 
+2016-11-08 17:35:24 pid:13137 worker[ChatBusinessWorker:13140] exit with status 64000
+2016-11-08 17:36:18 pid:13137 Workerman[start.php] Stopping ...
+2016-11-08 17:36:18 pid:13137 Workerman[start.php] has been stopped
+2016-11-08 17:41:24 pid:13376 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:44:55 pid:13376 Workerman[start.php] Stopping ...
+2016-11-08 17:44:55 pid:13376 Workerman[start.php] has been stopped
+2016-11-08 17:45:40 pid:13522 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:45:53 pid:13524 Error: Using $this when not in object context in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #50)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 17:45:53 pid:13524 WORKER EXIT UNEXPECTED 
+2016-11-08 17:45:53 pid:13522 worker[ChatBusinessWorker:13524] exit with status 64000
+2016-11-08 17:47:30 pid:13522 Workerman[start.php] Stopping ...
+2016-11-08 17:47:30 pid:13522 Workerman[start.php] has been stopped
+2016-11-08 17:54:52 pid:13710 Workerman[start.php] start in DEBUG mode
+2016-11-08 17:55:08 pid:13711 Error: Undefined class constant 'CENTRE_ID' in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108ff000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108ff000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #50)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 17:55:08 pid:13711 WORKER EXIT UNEXPECTED 
+2016-11-08 17:55:08 pid:13710 worker[ChatBusinessWorker:13711] exit with status 64000
+2016-11-08 18:02:42 pid:13710 Workerman[start.php] Stopping ...
+2016-11-08 18:02:42 pid:13710 Workerman[start.php] has been stopped
+2016-11-08 18:02:45 pid:13958 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:02:46 pid:13959 Error: Using $this when not in object context in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fe000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108fe000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #52)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 18:02:46 pid:13959 WORKER EXIT UNEXPECTED 
+2016-11-08 18:02:46 pid:13958 worker[ChatBusinessWorker:13959] exit with status 64000
+2016-11-08 18:02:56 pid:13958 Workerman[start.php] Stopping ...
+2016-11-08 18:02:56 pid:13958 Workerman[start.php] has been stopped
+2016-11-08 18:02:59 pid:13973 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:02:59 pid:13974 Error: Using $this when not in object context in /home/finghin/workerman-chat/Applications/Chat/Events.php:140
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108ff000...', '{"type":"login"...')
+#1 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(360): call_user_func('Events::onMessa...', '7f00000108ff000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /home/finghin/workerman-chat/vendor/workerman/workerman/Connection/TcpConnection.php(433): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #55)
+#5 /home/finghin/workerman-chat/vendor/workerman/workerman/Events/Select.php(250): call_user_func_array(Array, Array)
+#6 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(1470): Workerman\Events\Select->loop()
+#7 /home/finghin/workerman-chat/vendor/workerman/gateway-worker/src/BusinessWorker.php(174): Workerman\Worker->run()
+#8 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(898): GatewayWorker\BusinessWorker->run()
+#9 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(864): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#10 /home/finghin/workerman-chat/vendor/workerman/workerman/Worker.php(420): Workerman\Worker::forkWorkers()
+#11 /home/finghin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#12 {main}
+2016-11-08 18:02:59 pid:13974 WORKER EXIT UNEXPECTED 
+2016-11-08 18:02:59 pid:13973 worker[ChatBusinessWorker:13974] exit with status 64000
+2016-11-08 18:03:12 pid:13973 Workerman[start.php] Stopping ...
+2016-11-08 18:03:12 pid:13973 Workerman[start.php] has been stopped
+2016-11-08 18:03:58 pid:14055 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:04:13 pid:14055 Workerman[start.php] Stopping ...
+2016-11-08 18:04:13 pid:14055 Workerman[start.php] has been stopped
+2016-11-08 18:04:14 pid:14073 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:07:13 pid:14073 Workerman[start.php] Stopping ...
+2016-11-08 18:07:13 pid:14073 Workerman[start.php] has been stopped
+2016-11-08 18:07:21 pid:14153 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:08:02 pid:14153 Workerman[start.php] Stopping ...
+2016-11-08 18:08:02 pid:14153 Workerman[start.php] has been stopped
+2016-11-08 18:10:17 pid:14322 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:11:24 pid:14322 Workerman[start.php] Stopping ...
+2016-11-08 18:11:24 pid:14322 Workerman[start.php] has been stopped
+2016-11-08 18:11:25 pid:14397 Workerman[start.php] start in DEBUG mode
+2016-11-08 18:11:51 pid:14397 Workerman[start.php] Stopping ...
+2016-11-08 18:11:51 pid:14397 Workerman[start.php] has been stopped
