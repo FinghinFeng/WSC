@@ -73,9 +73,10 @@
                 console.log(data['client_name']+"登录成功");
                 break;
             // 发言
-            case 'say':
+            case 'request':
                 //{"type":"say","from_client_id":xxx,"to_client_id":"all/client_id","content":"xxx","time":"xxx"}
-                say(data['from_client_id'], data['from_client_name'], data['content'], data['time']);
+                //say(data['from_client_id'], data['from_client_name'], data['content'], data['time']);
+                ws.send('{"type":"reply","content":"return_data_xxx","client_id":"'+data['client_id']+'"}');
                 break;
             // 用户退出 更新用户列表
             case 'logout':

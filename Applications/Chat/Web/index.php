@@ -99,7 +99,7 @@
       var input = document.getElementById("textarea");
       var to_client_id = $("#client_list option:selected").attr("value");
       var to_client_name = $("#client_list option:selected").text();
-      ws.send('{"type":"say","to_client_id":"'+to_client_id+'","to_client_name":"'+to_client_name+'","content":"'+input.value.replace(/"/g, '\\"').replace(/\n/g,'\\n').replace(/\r/g, '\\r')+'"}');
+      ws.send('{"type":"request","client_name":"'+name+'","eq_id":"001xx"}');
       input.value = "";
       input.focus();
     }
