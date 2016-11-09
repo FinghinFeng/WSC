@@ -28,6 +28,8 @@ $gateway->lanIp = '127.0.0.1';
 $gateway->startPort = 2300;
 // 心跳间隔
 $gateway->pingInterval = 10;
+//心跳连接无响应次数
+$gateway->pingNotResponseLimit = 2;
 // 心跳数据
 $gateway->pingData = '{"type":"ping"}';
 // 服务注册地址
