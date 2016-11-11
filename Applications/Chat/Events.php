@@ -181,7 +181,7 @@ class Events
                 }
                 $new_message = array(
                     'type' => $message_data['type'], 
-                    'name' => $_SESSION['name'],
+                    'client_name' => $_SESSION['name'],
                     'client_id' => $client_id,
                     'eq_id'=> $message_data['eq_id'],
                 );
