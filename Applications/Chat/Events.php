@@ -127,21 +127,31 @@ class Events
                 return;
             //分手机端/中控端 两种登录握手
             case 'login':
+                //判断是否已经登录过
+                if(isset($_SESSION['name']))
+                {
+                    $new_message = array(
+                        'type' => 'logged',
+                        'msg' => $_SESSION['name'] . ':logged_in',
+                    );
+                    return Gateway::sendToCurrentClient(json_encode($new_message));
+                }
+                $_SESSION['name'] = $message_data['name'];
                 $new_message = array(
                     'type' => $message_data['type'],
-                    'client_name' => $message_data['client_name'], 
+                    'name' => $message_data['name'], 
                 );
                 switch($message_data['client_type'])
                 {
-                    //手机端发送 data: {type:login,client_name:xxx,client_type:client}
+                    //手机端发送 data: {type:login,name:xxx,client_type:client}
                     case 'client':
                         $new_message['client_id'] = $client_id;
                         Gateway::bindUid($client_id,'clientId');
-                        $centreid_array = Gateway::getClientIdByUid('centreId');
-                        $new_message['centre_id'] = reset($centreid_array);
+                        //$centreid_array = Gateway::getClientIdByUid('centreId');
+                        //$new_message['centre_id'] = reset($centreid_array);
                         Gateway::sendToCurrentClient(json_encode($new_message));
                         return;
-                    //中控端发送 data: {type:login,client_name:xxx,client_type:centre}
+                    //中控端发送 data: {type:login,name:xxx,client_type:centre}
                     case 'centre':
                         $new_message['centre_id'] = $client_id;
                         Gateway::bindUid($client_id,'centreId');
@@ -149,7 +159,7 @@ class Events
                         return;
                 }
                 return;    
-            // 手机端发送 data: {type:request,client_name:xxx,eq_id:xxx}
+            // 手机端发送 data: {type:request,eq_id:xxx}
             case 'request':
                 // 向中控屏请求设备运行数据
                 //判断中控屏是否已经连接，没连接则返回手机端中控端未连接信息，已连接则向中控屏发送请求
@@ -159,11 +169,21 @@ class Events
                     Gateway::sendToCurrentClient(json_encode($error_message));
                     return;
                 }
+                //检测请求的手机端是否已经登录
+                if(!isset($_SESSION['name']))
+                {
+                    $new_message = array(
+                        'type' => 'not_logged',
+                        'msg' => 'the client is not logged in',
+                    );
+                    Gateway::sendToCurrentClient(json_encode($error_message));
+                    return;
+                }
                 $new_message = array(
-                    'type'=>$message_data['type'], 
-                    'client_name' =>$message_data['client_name'],
-                    'client_id'=>$client_id,
-                    'eq_id'=>$message_data['eq_id'],
+                    'type' => $message_data['type'], 
+                    'name' => $_SESSION['name'],
+                    'client_id' => $client_id,
+                    'eq_id'=> $message_data['eq_id'],
                 );
                 $centreid_array = Gateway::getClientIdByUid('centreId');
                 //绑定的centreId组只有一个client_id，就是中控屏的client_id
@@ -175,6 +195,16 @@ class Events
             //中控端发送 data: {type:reply,content:xxx,client_id:原请求的手机端id}
             case 'reply':
                 //回复手机客户端
+                //检测回应的中控端是否已经登录
+                if(!isset($_SESSION['name']))
+                {
+                    $new_message = array(
+                        'type' => 'not_logged',
+                        'msg' => 'the centre is not logged in',
+                    );
+                    Gateway::sendToCurrentClient(json_encode($error_message));
+                    return;
+                }
                 //判断发出请求的手机端是否在线，在线则向该手机端发送从中控端接收到的数据，不在线则返回中控端提示手机端已经断开连接
                 if(Gateway::isOnline($message_data['client_id']))
                 {
@@ -193,13 +223,29 @@ class Events
                 return;
             //中控端发送 data: {type:warning,content:xxx}
             case 'warning':
+                //检测回应的中控端是否已经登录
+                if(!isset($_SESSION['name']))
+                {
+                    $new_message = array(
+                        'type' => 'not_logged',
+                        'msg' => 'the centre is not logged in',
+                    );
+                    Gateway::sendToCurrentClient(json_encode($error_message));
+                    return;
+                }
                 //对手机端广播报警
-                $new_message = array(
-                    'type' => $message_data['type'],
-                    'content' => $message_data['content'],
-                );
-                Gateway::sendToUid('clientId',json_encode($new_message));
-                return;
+                //如果有手机端在线则广播，没有则暂不处理
+                if(Gateway::isUidOnline('clientId'))
+                {
+                    $new_message = array(
+                        'type' => $message_data['type'],
+                        'content' => $message_data['content'],
+                    );
+                    Gateway::sendToUid('clientId',json_encode($new_message));
+                    return;
+                }else{
+                    return;
+                }
         }
    }
 
